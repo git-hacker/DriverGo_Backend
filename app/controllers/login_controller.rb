@@ -17,8 +17,10 @@ def wechat_user
   end
 
   def login
-    @user= User.find_or_create_by(open_id: wechat_user.fetch("openid"))
-
+    p wechat_user.fetch("openid")
+    @user = User.find_or_initialize_by(open_id: wechat_user.fetch("openid"))
+    @user.leaderboard = Leaderboard.first
+    @user.save
     render json: {
       userId: @user.id
     }
