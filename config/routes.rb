@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :leaderboards, only: [:index,:create,:destroy]
       resources :users do
+      resources :locations, only: [:create]
       resources :scores, only:[:index,:create] do
         collection do
           get 'highest', to: "scores#highest"

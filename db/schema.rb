@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_08_053038) do
+ActiveRecord::Schema.define(version: 2018_09_08_122707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
 
   create_table "leaderboards", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -36,6 +37,8 @@ ActiveRecord::Schema.define(version: 2018_09_08_053038) do
     t.bigint "leaderboard_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.geography "last_stored_locatin", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
+    t.decimal "total_distance", default: "0.0"
     t.index ["leaderboard_id"], name: "index_users_on_leaderboard_id"
   end
 
