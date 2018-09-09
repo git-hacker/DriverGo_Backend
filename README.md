@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the rails backend for DriverGo.
 
-Things you may want to cover:
+To set up you need:
 
-* Ruby version
+- ruby 2.4.4
+- bundler installed within that ruby (`gem install bundler`)
+- Postgresql (`brew install postgresql`)
+- Postgis (`brew install postgis`)
+Then go into this project and run
 
-* System dependencies
+`bundle install`
 
-* Configuration
+Then
 
-* Database creation
+`bin/rails db:create db:migrate`
 
-* Database initialization
+and start server with
 
-* How to run the test suite
+`bin/rails s -p 3000`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
