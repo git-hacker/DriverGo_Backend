@@ -1,5 +1,5 @@
 json.array! @users do |user|
-  json.extract! user, :id, :nickname, :gender, :avatar_url
+  json.extract! user, :id, :nickname, :gender, :avatar_url,:total_distance,:level
   json.date user.created_at.strftime("%m/%d/%y")
   json.user do
     json.scores user.scores do |score|
