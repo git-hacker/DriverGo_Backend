@@ -49,7 +49,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def user_params
-    params.require(:user).permit(:leaderboard_id, :nickname, :avatar_url, :gender,:open_id, :total_distance,:level)
+    params.require(:user).permit(:leaderboard_id, :nickname, :avatar_url, :gender,:open_id, :total_distance,:level,:points)
   end
 
   def render_error
