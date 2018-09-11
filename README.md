@@ -14,7 +14,7 @@ Then go into this project and run
 
 Then
 
-`bin/rails db:create db:migrate`
+`bin/rails db:create db:migrate db:seed`
 
 and start server with
 
